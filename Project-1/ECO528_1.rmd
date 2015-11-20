@@ -1,0 +1,24 @@
+---
+title: "ECO528_1"
+author: "T.A. Meraxa"
+date: "November 20, 2015"
+output: html_document
+---
+
+
+Load data to R
+```{r, eval=FALSE}
+setwd("C:/Users/T.Arcky/Dropbox/PhD_Projects/Personal Development/Coursera Finance/ECO528 Empirical Methods in Financial Economics/ECO528_Empirical_Methods_in_Finance/Project-1")
+
+IBM <- read.csv("IBM.txt", sep = "", header = FALSE)
+names(IBM) <- c("permno","date", "prc", "ret", "retx", "sprtrn")
+
+AAPL <- read.csv("AAPL.txt", sep = "", header = FALSE)
+names(AAPL) <- c("permno","date", "prc", "ret", "retx", "sprtrn")
+
+C <- read.csv("C.txt", sep = "", header = FALSE)
+names(C) <- c("permno","date","ret","vwretd")
+
+SnP <- IBM$sprtrn
+
+```
