@@ -4,9 +4,8 @@ author: "T.A. Meraxa"
 date: "November 20, 2015"
 output: html_document
 ---
-
-
-Load data to R
+***
+### Load data to R
 ```{r, eval=FALSE}
 setwd("C:/Users/T.Arcky/Dropbox/PhD_Projects/Personal Development/Coursera Finance/ECO528 Empirical Methods in Financial Economics/ECO528_Empirical_Methods_in_Finance/Project-1")
 
@@ -16,9 +15,28 @@ names(IBM) <- c("permno","date", "prc", "ret", "retx", "sprtrn")
 AAPL <- read.csv("AAPL.txt", sep = "", header = FALSE)
 names(AAPL) <- c("permno","date", "prc", "ret", "retx", "sprtrn")
 
-C <- read.csv("C.txt", sep = "", header = FALSE)
-names(C) <- c("permno","date","ret","vwretd")
-
 SnP <- IBM$sprtrn
+
+```
+
+***
+###1-1 Using the price series, calculate the simple and log monthly returns. Compare your result with holding period return and holding period return without dividends, are they different or similar? Why?
+
+
+```{r, eval=FALSE}
+# Calculate monthly return on IBM
+
+# Creating nrow for IBM, AAPL
+nIBM <- nrow(IBM)
+nAAPL <- nrow(AAPL)
+
+
+# Calculate simple monthly returns for IBM and AAPL
+IBM_ret <- (IBM[2:n,3] - IBM[1:(n-1),3]) / IBM[1:(n-1),3]
+AAPL_ret <- (AAPL[2:n,3] - AAPL[1:(n-1),3]) / AAPL[1:(n-1),3]
+
+# Calculate log monthly returns for IBM and AAPL
+IBM_ccret <- log(IBM[2:n,3])-log(IBM[1:(n-1),3])
+AAPL_ccret <- log(AAPL[2:n,3])-log(AAPL[1:(n-1),3])
 
 ```
