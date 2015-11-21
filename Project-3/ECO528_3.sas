@@ -1,7 +1,7 @@
 *ECO 528
 Project 3
 
-Fama-French Three Factor Model;
+CAPM and Fama-French Three Factor Model;
 
 *load data;
 data ffm;
